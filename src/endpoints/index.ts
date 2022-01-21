@@ -1,4 +1,3 @@
-import "../renderers";
 import { render as amisRender } from "amis";
 import ReactDOM from "react-dom";
 import { Schema } from "amis/lib/types";
@@ -26,6 +25,10 @@ const auditEndPoint: auditEndPointFunc = (
   ReactDOM.render(comp, selector);
   return comp;
 };
+
+export {
+  auditEndPoint,
+}
 
 // bind to window
 (window as any).auditEndPoint = auditEndPoint;
