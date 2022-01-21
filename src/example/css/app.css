@@ -15,3 +15,8 @@
 #main-jump a {
   color: #2c5d87;
 }
+
+.spinner {
+  width: 30px;
+  margin: 0 auto;
+}

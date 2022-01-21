@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auditEndPoint } from "../endpoints";
+import { Spinner } from "amis";
 
 import 'amis/lib/themes/cxd.css';
 import 'amis/lib/helper.css';
@@ -187,11 +188,14 @@ export default function App(props: any) {
   }, []);
 
   const handleClick = () => {
-    setShowJsonSchemaDemo(!showJsonSchemaDemo);
-    if (showJsonSchemaDemo) {
-    setTimeout(()=>{
-        auditEndPoint(demoJsonSchema, "#hello-json");
-    }, 5000);
+    if (!showJsonSchemaDemo) {
+      setShowJsonSchemaDemo(true);
+      setTimeout(()=>{
+          auditEndPoint(demoJsonSchema, "#hello-json");
+      }, 2000);
+
+  } else {
+    setShowJsonSchemaDemo(false);
   }
   };
 
@@ -204,7 +208,7 @@ export default function App(props: any) {
         <span style={{cursor: 'pointer'}} onClick={handleClick}>
           组件示例
         </span>
-      </div> {showJsonSchemaDemo? <div id="hello-json"></div>: null}
+      </div> {showJsonSchemaDemo? <div id="hello-json"><div className="spinner"><Spinner></Spinner></div></div>: null}
     </div>
   );
 }
