@@ -29,7 +29,7 @@ export default function App(props: any) {
   return (
     <div style={bodyStyle}>
       <h1 style={{ textAlign: "center", marginTop: mgtop, color: '#2c5d87', }}>
-        Hello, API Web UI library!
+        Hello, AIP Web UI library!
       </h1>
     </div>
   );
